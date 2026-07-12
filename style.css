@@ -1,144 +1,298 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap");
+/* --- IMPORT GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
 
+/* --- COLORS & BASICS (OLD MONEY VIBE) --- */
 :root {
-  /* A te elegáns színpalettád */
-  --alabaster: #F8F7F4;       /* Törtfehér (off-white) a fő háttérnek */
-  --cashmere: #E8E5DF;        /* Világos bézs (light beige) a kiemelt részeknek */
-  --forest-black: #1D231F;    /* Nagyon sötét, elegáns szín a szövegeknek */
-  --slate-grey: #5C625A;      /* Halványabb szürke a másodlagos szövegeknek */
-  --antique-brass: #8A7B66;   /* Kifinomult bronzos/barnás kiegészítő szín */
-  --border: rgba(29, 35, 31, 0.12);
+  --navy-blue: #0F172A; /* Deep navy blue, authoritative and premium */
+  --cream-bg: #F4F1EA;  /* Rich cream/ivory background */
+  --cream-light: #FAF9F6; /* Lighter cream for cards or sections */
+  --accent-gold: #B8977E; /* Muted antique gold/camel for accents */
+  --text-muted: #475569; /* Muted text color for secondary information */
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
 body {
-  background: var(--alabaster);
-  color: var(--forest-black);
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Lato', sans-serif; /* Modern, clean body text */
+  background-color: var(--cream-bg);
+  color: var(--navy-blue);
   line-height: 1.6;
 }
 
-button, input { font: inherit; }
-a { color: inherit; text-decoration: none; transition: 0.2s ease; }
-img { max-width: 100%; display: block; object-fit: cover; }
+h1, h2, h3, h4, .logo {
+  font-family: 'Playfair Display', serif; /* Classic, elegant headings */
+  font-weight: 400;
+}
 
-/* FEJLÉC ÉS LOGÓ */
+/* --- BUTTONS --- */
+.primary-button {
+  display: inline-block;
+  background-color: var(--navy-blue);
+  color: var(--cream-bg);
+  padding: 14px 32px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--navy-blue);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: transparent;
+  color: var(--navy-blue);
+}
+
+.secondary-button {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--navy-blue);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--navy-blue);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background-color: var(--navy-blue);
+  color: var(--cream-bg);
+}
+
+/* --- HEADER & NAVIGATION --- */
 .site-header {
-  align-items: center;
-  background: rgba(248, 247, 244, 0.95);
-  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
-  padding: 20px 5%;
+  align-items: center;
+  padding: 30px 5%;
+  background-color: var(--cream-bg);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 28px;
+  text-decoration: none;
+  color: var(--navy-blue);
   letter-spacing: 4px;
-  color: var(--forest-black);
 }
 
-.desktop-nav { display: flex; gap: 32px; }
-.desktop-nav a { font-size: 14px; font-weight: 500; }
-.desktop-nav a:hover { color: var(--antique-brass); }
-
-.header-actions { display: flex; align-items: center; gap: 18px; }
-.text-button, .bag-button { background: none; border: none; cursor: pointer; font-weight: 500; }
-.text-button { display: none; }
-.bag-button span {
-  align-items: center; background: var(--forest-black); border-radius: 50%;
-  color: var(--alabaster); display: inline-flex; font-size: 11px;
-  height: 22px; justify-content: center; margin-left: 5px; width: 22px;
+.desktop-nav a {
+  text-decoration: none;
+  color: var(--navy-blue);
+  margin: 0 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
 
-.mobile-menu {
-  background: var(--alabaster); border-bottom: 1px solid var(--border);
-  display: none; flex-direction: column; gap: 18px; padding: 24px 5%;
-  position: sticky; top: 69px; z-index: 19;
+.desktop-nav a:hover {
+  color: var(--accent-gold);
 }
-.mobile-menu.open { display: flex; }
 
-/* GOMBOK */
-.primary-button, .secondary-button {
-  display: inline-block; font-size: 14px; padding: 15px 30px;
-  transition: 0.3s ease; cursor: pointer; letter-spacing: 1px;
+.header-actions button {
+  background: none;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy-blue);
+  cursor: pointer;
+  margin-left: 20px;
 }
-.primary-button { background: var(--forest-black); border: 1px solid var(--forest-black); color: var(--alabaster); }
-.primary-button:hover { background: var(--antique-brass); border-color: var(--antique-brass); color: white; }
-.secondary-button { border: 1px solid var(--forest-black); color: var(--forest-black); background: transparent; }
-.secondary-button:hover { background: var(--forest-black); color: var(--alabaster); }
 
-/* RÓLUNK RÉSZ (BRAND INTRO) */
-.brand-intro {
-  background: var(--cashmere);
-  padding: 120px 5%; text-align: center;
+/* --- HOMEPAGE: HERO SECTION --- */
+.hero {
+  height: 85vh;
+  background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
-.intro-content { margin: 0 auto; max-width: 800px; }
-.intro-content h1 {
-  font-family: "Playfair Display", serif; font-size: clamp(40px, 6vw, 70px);
-  font-weight: 500; line-height: 1.1; margin-bottom: 24px;
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.3); /* Subtle dark blue overlay on image */
+  z-index: 1;
 }
-.intro-content p { color: var(--slate-grey); font-size: 18px; margin: 0 auto 35px; max-width: 600px; }
 
-/* TERMÉKEK BEMUTATÁSA (RUHÁZAT ÉS DEKOR) */
-.category-showcase {
-  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
-  gap: 5%; padding: 100px 5%;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--cream-bg);
 }
-.category-showcase.reverse { background: var(--cashmere); direction: rtl; }
-.category-showcase.reverse > * { direction: ltr; }
 
-.showcase-content { padding: 40px; }
-.showcase-content h2 {
-  font-family: "Playfair Display", serif; font-size: clamp(32px, 4vw, 50px);
-  font-weight: 500; margin-bottom: 20px;
+.hero-content h1 {
+  font-size: clamp(40px, 6vw, 70px);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
-.showcase-content p { color: var(--slate-grey); font-size: 16px; margin-bottom: 35px; max-width: 450px; }
 
-.showcase-image img { height: 700px; width: 100%; }
-.showcase-images-double { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.showcase-images-double img { height: 600px; width: 100%; }
-
-/* LÁBLÉC (FOOTER) - Ezt majd a 3. lépésben cseréljük a HTML-ben! */
-.site-footer { background: var(--forest-black); color: var(--alabaster); padding: 80px 5% 40px; }
-.footer-closing { text-align: center; margin-bottom: 60px; }
-.footer-closing h2 { font-size: 24px; letter-spacing: 4px; margin-bottom: 15px; color: var(--antique-brass); }
-.footer-closing p { color: rgba(248, 247, 244, 0.7); }
-.footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 1px solid rgba(248, 247, 244, 0.1); padding-top: 60px; max-width: 900px; margin: 0 auto; }
-.link-column { display: flex; flex-direction: column; gap: 12px; }
-.link-column strong { font-weight: 500; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; font-size: 13px; color: var(--antique-brass); }
-.link-column a { color: rgba(248, 247, 244, 0.6); font-size: 14px; }
-.link-column a:hover { color: var(--alabaster); }
-.footer-bottom { text-align: center; margin-top: 80px; font-size: 12px; color: rgba(248, 247, 244, 0.4); }
-
-/* ÉRTESÍTÉS (KOSÁR POPUP) */
-.notification {
-  background: var(--forest-black); bottom: 25px; color: var(--alabaster);
-  opacity: 0; padding: 15px 22px; pointer-events: none; position: fixed;
-  right: 25px; transform: translateY(20px); transition: 0.3s ease;
-  z-index: 50; border: 1px solid var(--antique-brass);
+.hero-content p {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
-.notification.show { opacity: 1; transform: translateY(0); }
 
-/* MOBIL NÉZET BEÁLLÍTÁSAI */
-@media (max-width: 900px) {
-  .desktop-nav { display: none; }
-  .text-button { display: block; }
-  .category-showcase { grid-template-columns: 1fr; gap: 40px; padding: 60px 5%; }
-  .category-showcase.reverse { direction: ltr; }
-  .showcase-content { padding: 0; text-align: center; }
-  .showcase-content p { margin: 0 auto 30px; }
-  .showcase-image img, .showcase-images-double img { height: 450px; }
-  .footer-links { grid-template-columns: 1fr; text-align: center; }
+.hero-content .primary-button {
+  background-color: var(--cream-bg);
+  color: var(--navy-blue);
+  border-color: var(--cream-bg);
+}
+
+.hero-content .primary-button:hover {
+  background-color: transparent;
+  color: var(--cream-bg);
+}
+
+/* --- HOMEPAGE: CATEGORIES --- */
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px 5%;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.category-card {
+  text-align: center;
+  text-decoration: none;
+  color: var(--navy-blue);
+}
+
+.category-card img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.7s ease;
+}
+
+.category-img-wrapper {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.category-card:hover img {
+  transform: scale(1.03);
+}
+
+.category-card h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.category-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- CLOTHING & DECOR PAGES: GRID DESIGN --- */
+.collection-header {
+  text-align: center;
+  padding: 100px 5% 60px;
+}
+
+.collection-header h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 15px;
+}
+
+.collection-header p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.product-grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 5% 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shop-item img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.item-details {
+  text-align: center;
+}
+
+.item-details h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.item-details p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.item-details strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.item-details .secondary-button {
+  width: 100%;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  background-color: var(--navy-blue);
+  color: var(--cream-bg);
+  padding: 80px 5% 40px;
+  text-align: center;
+}
+
+.site-footer h2 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.site-footer p {
+  color: var(--accent-gold);
+  margin-bottom: 40px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(244, 241, 234, 0.1);
+  padding-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
