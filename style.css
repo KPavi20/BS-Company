@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap");
+
+:root {
+  /* A te elegáns színpalettád */
+  --alabaster: #F8F7F4;       /* Törtfehér (off-white) a fő háttérnek */
+  --cashmere: #E8E5DF;        /* Világos bézs (light beige) a kiemelt részeknek */
+  --forest-black: #1D231F;    /* Nagyon sötét, elegáns szín a szövegeknek */
+  --slate-grey: #5C625A;      /* Halványabb szürke a másodlagos szövegeknek */
+  --antique-brass: #8A7B66;   /* Kifinomult bronzos/barnás kiegészítő szín */
+  --border: rgba(29, 35, 31, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--alabaster);
+  color: var(--forest-black);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+}
+
+button, input { font: inherit; }
+a { color: inherit; text-decoration: none; transition: 0.2s ease; }
+img { max-width: 100%; display: block; object-fit: cover; }
+
+/* FEJLÉC ÉS LOGÓ */
+.site-header {
+  align-items: center;
+  background: rgba(248, 247, 244, 0.95);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--forest-black);
+}
+
+.desktop-nav { display: flex; gap: 32px; }
+.desktop-nav a { font-size: 14px; font-weight: 500; }
+.desktop-nav a:hover { color: var(--antique-brass); }
+
+.header-actions { display: flex; align-items: center; gap: 18px; }
+.text-button, .bag-button { background: none; border: none; cursor: pointer; font-weight: 500; }
+.text-button { display: none; }
+.bag-button span {
+  align-items: center; background: var(--forest-black); border-radius: 50%;
+  color: var(--alabaster); display: inline-flex; font-size: 11px;
+  height: 22px; justify-content: center; margin-left: 5px; width: 22px;
+}
+
+.mobile-menu {
+  background: var(--alabaster); border-bottom: 1px solid var(--border);
+  display: none; flex-direction: column; gap: 18px; padding: 24px 5%;
+  position: sticky; top: 69px; z-index: 19;
+}
+.mobile-menu.open { display: flex; }
+
+/* GOMBOK */
+.primary-button, .secondary-button {
+  display: inline-block; font-size: 14px; padding: 15px 30px;
+  transition: 0.3s ease; cursor: pointer; letter-spacing: 1px;
+}
+.primary-button { background: var(--forest-black); border: 1px solid var(--forest-black); color: var(--alabaster); }
+.primary-button:hover { background: var(--antique-brass); border-color: var(--antique-brass); color: white; }
+.secondary-button { border: 1px solid var(--forest-black); color: var(--forest-black); background: transparent; }
+.secondary-button:hover { background: var(--forest-black); color: var(--alabaster); }
+
+/* RÓLUNK RÉSZ (BRAND INTRO) */
+.brand-intro {
+  background: var(--cashmere);
+  padding: 120px 5%; text-align: center;
+}
+.intro-content { margin: 0 auto; max-width: 800px; }
+.intro-content h1 {
+  font-family: "Playfair Display", serif; font-size: clamp(40px, 6vw, 70px);
+  font-weight: 500; line-height: 1.1; margin-bottom: 24px;
+}
+.intro-content p { color: var(--slate-grey); font-size: 18px; margin: 0 auto 35px; max-width: 600px; }
+
+/* TERMÉKEK BEMUTATÁSA (RUHÁZAT ÉS DEKOR) */
+.category-showcase {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  gap: 5%; padding: 100px 5%;
+}
+.category-showcase.reverse { background: var(--cashmere); direction: rtl; }
+.category-showcase.reverse > * { direction: ltr; }
+
+.showcase-content { padding: 40px; }
+.showcase-content h2 {
+  font-family: "Playfair Display", serif; font-size: clamp(32px, 4vw, 50px);
+  font-weight: 500; margin-bottom: 20px;
+}
+.showcase-content p { color: var(--slate-grey); font-size: 16px; margin-bottom: 35px; max-width: 450px; }
+
+.showcase-image img { height: 700px; width: 100%; }
+.showcase-images-double { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.showcase-images-double img { height: 600px; width: 100%; }
+
+/* LÁBLÉC (FOOTER) - Ezt majd a 3. lépésben cseréljük a HTML-ben! */
+.site-footer { background: var(--forest-black); color: var(--alabaster); padding: 80px 5% 40px; }
+.footer-closing { text-align: center; margin-bottom: 60px; }
+.footer-closing h2 { font-size: 24px; letter-spacing: 4px; margin-bottom: 15px; color: var(--antique-brass); }
+.footer-closing p { color: rgba(248, 247, 244, 0.7); }
+.footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 1px solid rgba(248, 247, 244, 0.1); padding-top: 60px; max-width: 900px; margin: 0 auto; }
+.link-column { display: flex; flex-direction: column; gap: 12px; }
+.link-column strong { font-weight: 500; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; font-size: 13px; color: var(--antique-brass); }
+.link-column a { color: rgba(248, 247, 244, 0.6); font-size: 14px; }
+.link-column a:hover { color: var(--alabaster); }
+.footer-bottom { text-align: center; margin-top: 80px; font-size: 12px; color: rgba(248, 247, 244, 0.4); }
+
+/* ÉRTESÍTÉS (KOSÁR POPUP) */
+.notification {
+  background: var(--forest-black); bottom: 25px; color: var(--alabaster);
+  opacity: 0; padding: 15px 22px; pointer-events: none; position: fixed;
+  right: 25px; transform: translateY(20px); transition: 0.3s ease;
+  z-index: 50; border: 1px solid var(--antique-brass);
+}
+.notification.show { opacity: 1; transform: translateY(0); }
+
+/* MOBIL NÉZET BEÁLLÍTÁSAI */
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .text-button { display: block; }
+  .category-showcase { grid-template-columns: 1fr; gap: 40px; padding: 60px 5%; }
+  .category-showcase.reverse { direction: ltr; }
+  .showcase-content { padding: 0; text-align: center; }
+  .showcase-content p { margin: 0 auto 30px; }
+  .showcase-image img, .showcase-images-double img { height: 450px; }
+  .footer-links { grid-template-columns: 1fr; text-align: center; }
+}
