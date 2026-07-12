@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing - BLANKSELF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  
+  <header class="site-header">
+    <a href="index.html" class="logo">BLANKSELF</a>
+
+    <nav class="desktop-nav">
+      <a href="clothing.html">Clothing</a>
+      <a href="index.html#decor">Home Decor</a>
+      <a href="index.html#about">Our Story</a>
+      <a href="index.html#blogs">Blogs</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="text-button" id="menuButton">Menu</button>
+      <button class="bag-button" id="bagButton">
+        Basket <span id="bagCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="clothing.html">Clothing</a>
+    <a href="index.html#decor">Home Decor</a>
+    <a href="index.html#about">Our Story</a>
+    <a href="index.html#blogs">Blogs</a>
+  </div>
+
+  <main>
+    <section class="collection-header">
+      <h1>Everyday Clothing</h1>
+      <p>Modern essentials designed to remain relevant beyond seasons.</p>
+    </section>
+
+    <section class="product-grid-section">
+      
+      <article class="shop-item">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="Heavy Cotton T-Shirt">
+        <div class="item-details">
+          <h3>Heavy Cotton T-Shirt</h3>
+          <p>Off-White</p>
+          <strong>€39</strong>
+          <button class="secondary-button add-button" data-product="Heavy Cotton T-Shirt" data-price="39">Add to Basket</button>
+        </div>
+      </article>
+
+      <article class="shop-item">
+        <img src="https://images.unsplash.com/photo-1608234807905-4466023792f5?auto=format&fit=crop&w=800&q=85" alt="Relaxed Linen Shirt">
+        <div class="item-details">
+          <h3>Relaxed Linen Shirt</h3>
+          <p>Light Beige</p>
+          <strong>€79</strong>
+          <button class="secondary-button add-button" data-product="Relaxed Linen Shirt" data-price="79">Add to Basket</button>
+        </div>
+      </article>
+
+      <article class="shop-item">
+        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=85" alt="Premium Essential Hoodie">
+        <div class="item-details">
+          <h3>Premium Essential Hoodie</h3>
+          <p>Cashmere Stone</p>
+          <strong>€89</strong>
+          <button class="secondary-button add-button" data-product="Premium Essential Hoodie" data-price="89">Add to Basket</button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-closing">
+      <h2>BLANKSELF</h2>
+      <p>Clothing and objects designed for the way you live.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="link-column">
+        <strong>Join Us</strong>
+        <a href="#">Newsletter</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="link-column">
+        <strong>Contact Us</strong>
+        <a href="#">Support</a>
+        <a href="#">Shipping & Returns</a>
+      </div>
+      <div class="link-column">
+        <strong>Follow Us</strong>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 Blankself</p>
+    </div>
+  </footer>
+
+  <div class="notification" id="notification"></div>
+  <script src="script.js"></script>
+</body>
+</html>
